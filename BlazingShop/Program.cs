@@ -8,7 +8,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 
-var cnnStr = builder.Configuration.GetConnectionString("DefaultConnection");
+var cnnStr = builder.Configuration.GetConnectionString("SqlConnection");
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(cnnStr));
 
 var app = builder.Build();
